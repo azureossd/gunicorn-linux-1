@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
@@ -25,5 +24,5 @@ async def read_item(request: Request):
         {'name': 'Tokyo','temperature': '33F'}, 
         {'name': 'Sydney','temperature': '60F'} 
     ]
-    
+
     return templates.TemplateResponse("item.html", {"request": request, "cities": cities})
